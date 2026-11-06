@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Primary Meta Tags -->
+  <title>Arnab Basu — Academic, Researcher &amp; Writer</title>
+  <meta name="title" content="Arnab Basu — Academic, Researcher &amp; Writer">
+  <meta name="description" content="Academician and researcher investigating the intersections of workplace spirituality, employee mental well-being, HR synergy, and modern Indian culture. Academic Coordinator at Techno India University &amp; PhD Scholar at UEM Kolkata.">
+  <meta name="author" content="Arnab Basu">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://basuarnab.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://basuarnab.com/">
+  <meta property="og:title" content="Arnab Basu — Academic, Researcher &amp; Writer">
+  <meta property="og:description" content="Investigating the intersections of workplace spirituality, employee mental well-being, and organizational synergy in modern culture.">
+  <meta property="og:image" content="Arnab.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://basuarnab.com/">
+  <meta property="twitter:title" content="Arnab Basu — Academic, Researcher &amp; Writer">
+  <meta property="twitter:description" content="Investigating the intersections of workplace spirituality, employee mental well-being, and organizational synergy in modern culture.">
+  <meta property="twitter:image" content="Arnab.jpg">
+
+  <!-- Light favicon: aquatic blue and glacier ring -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230891B2'/%3E%3Ccircle cx='16' cy='16' r='10' fill='%23E0F2FE'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%230891B2'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk (futuristic/cool display & loader), Inter Tight, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Pre-paint: skip intro if already seen (zero FOUC) -->
+  <script>
+    (function() {
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        if (sessionStorage.getItem('introSeen') && urlParams.get('intro') !== '1') {
+          document.documentElement.classList.add('skip-intro');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <noscript>
+    <style>
+      #intro-curtain { display: none !important; }
+      body.scroll-locked { overflow: auto !important; }
+      .drum-stage, .drum-controls { display: none !important; }
+      .drum-fallback-list { display: flex !important; }
+    </style>
+  </noscript>
+
+  <!-- Schema.org JSON-LD Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Arnab Basu",
+    "jobTitle": ["Academic Coordinator", "PhD Scholar in Management"],
+    "affiliation": [
+      { "@type": "Organization", "name": "Techno India University" },
+      { "@type": "Organization", "name": "University of Engineering & Management (UEM), Kolkata" }
+    ],
+    "alumniOf": [
+      { "@type": "Organization", "name": "Institute of Engineering & Management (IEM)" },
+      { "@type": "Organization", "name": "Academy of Technology" }
+    ],
+    "sameAs": ["https://www.linkedin.com/in/arnab-basu-3a06a8124/"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Particle Canvas (light/dark adaptive via JS) -->
+  <canvas class="bg-canvas" id="starfield-canvas" aria-hidden="true"></canvas>
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Line -->
+  <div class="scroll-progress-line" id="scroll-progress-line" aria-hidden="true"></div>
+
+  <!-- ======================================================================
+       OPENING ANIMATION / WEBSITE LOADER
+       "Arnab Basu" with kinetic typography, glowing starlight halo, aquatic shimmer
+       ====================================================================== -->
+  <div class="intro-curtain" id="intro-curtain" aria-hidden="true">
+    <div class="intro-ambient-glow" aria-hidden="true"></div>
+    <div class="intro-title-wrap">
+      <div class="intro-badge">
+        <span class="intro-badge-dot"></span>
+        <span class="intro-badge-text">PORTFOLIO &amp; SCHOLARSHIP</span>
+      </div>
+      <h1 class="intro-title" id="intro-title" aria-label="Arnab Basu">Arnab Basu</h1>
+      <div class="intro-hairline" id="intro-hairline"></div>
+      <div class="intro-loader-bar" id="intro-loader-bar">
+        <div class="intro-loader-progress" id="intro-loader-progress"></div>
+      </div>
+    </div>
+    <div class="intro-skip-cue">
+      <span>Entering Experience</span>
+      <span class="intro-skip-sub">Click anywhere to skip</span>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       FIXED HEADER
+       Quiet, tiny navigation in mono uppercase.
+       Light scheme by default; JS adds .header-dark when over dark sections.
+       ====================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <!-- Brand: "ARNAB BASU" + small solid dot -->
+      <a href="#hero" class="brand" aria-label="Arnab Basu Portfolio Home">
+        <span class="brand-name">Arnab Basu</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#about"        class="nav-link">About</a></li>
+          <li><a href="#publications" class="nav-link">Publications</a></li>
+          <li><a href="#skills"       class="nav-link">Skills</a></li>
+          <li><a href="#experience"   class="nav-link">Experience</a></li>
+          <li><a href="#field"        class="nav-link">In The Field</a></li>
+          <li><a href="#contact"      class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <button type="button" class="mobile-menu-btn" id="mobile-menu-btn"
+              aria-label="Toggle navigation menu" aria-expanded="false">
+        <span>MENU</span>
+      </button>
+    </div>
+
+    <!-- Full-screen Mobile Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay" aria-label="Mobile Navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="#about"        class="mobile-nav-link">About</a></li>
+        <li><a href="#publications" class="mobile-nav-link">Publications</a></li>
+        <li><a href="#skills"       class="mobile-nav-link">Skills</a></li>
+        <li><a href="#experience"   class="mobile-nav-link">Experience</a></li>
+        <li><a href="#field"        class="mobile-nav-link">In The Field</a></li>
+        <li><a href="#contact"      class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MAIN CONTENT
+       ====================================================================== -->
+  <main id="main-content">
+
+    <!-- ==================================================================
+         SECTION 1: HERO
+         Gigantic 2-line headline. Portrait dissolves from bottom of line 2.
+         Metadata clusters beside figure on desktop.
+         ================================================================== -->
+    <section class="hero-stage" id="hero" aria-label="Introduction">
+
+      <!-- Faint flowing marquee rows (behind everything, outline-only) -->
+      <div class="marquee-container" id="hero-marquee" aria-hidden="true">
+        <div class="marquee-row" data-direction="1" data-speed="1">
+          <div class="marquee-track">
+            <span class="marquee-text">SPIRITUALITY — WELL-BEING — WORKPLACE — CULTURE — </span>
+            <span class="marquee-text">SPIRITUALITY — WELL-BEING — WORKPLACE — CULTURE — </span>
+          </div>
+        </div>
+        <div class="marquee-row" data-direction="-1" data-speed="0.68">
+          <div class="marquee-track">
+            <span class="marquee-text">SPIRITUALITY — WELL-BEING — WORKPLACE — CULTURE — </span>
+            <span class="marquee-text">SPIRITUALITY — WELL-BEING — WORKPLACE — CULTURE — </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-Line Headline (behind portrait in z-order, line 2 fades downward) -->
+      <div class="hero-headline-wrap" aria-hidden="false">
+        <div class="hero-headline" id="hero-headline">
+          <div class="hero-line hero-line-1" id="hero-line-1">EXPLORE MY</div>
+          <div class="hero-line hero-line-2" id="hero-line-2">RESEARCH</div>
+        </div>
+      </div>
+
+      <!-- Portrait (cleanly fused with headline, dissolving downward) -->
+      <div class="hero-photo-stage" id="hero-photo-stage">
+        <!-- Shadow bloom behind (blurred soft ambient aura) -->
+        <img
+          class="hero-photo-shadow"
+          src="assets/img/arnab-cutout.png"
+          alt=""
+          aria-hidden="true"
+          width="600"
+          height="800"
+          fetchpriority="high"
+        >
+        <!-- Main treated cutout (seamlessly blended, no postcard border) -->
+        <img
+          class="hero-photo-main"
+          id="hero-photo-main"
+          src="assets/img/arnab-cutout.png"
+          alt="Portrait of Arnab Basu"
+          width="600"
+          height="800"
+          fetchpriority="high"
+          loading="eager"
+        >
+      </div>
+
+      <!-- Desktop metadata clusters (left and right of portrait) -->
+      <div class="hero-meta-left" aria-label="Location and identity">
+        <span class="meta-line">Kolkata, West Bengal</span>
+        <span class="meta-line">Explorer · Researcher · Writer · Academician</span>
+      </div>
+      <div class="hero-meta-right" aria-label="Current positions">
+        <span class="meta-line">Academic Coordinator, Techno India University</span>
+        <span class="meta-line">PhD Scholar, UEM Kolkata</span>
+      </div>
+
+      <!-- Copy block (paragraph + mobile metadata) -->
+      <div class="hero-copy-block">
+        <p class="hero-paragraph">
+          Investigating the intersections of workplace spirituality, employee mental well-being,
+          and organizational synergy in modern culture.
+        </p>
+        <!-- Mobile-only single meta line -->
+        <p class="hero-meta-mobile" aria-hidden="true">
+          Kolkata · Academic Coordinator, Techno India University
+        </p>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="hero-actions">
+        <a href="#publications" class="btn-primary" id="hero-primary-btn">
+          <span>Explore Research</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <span>Get in Touch</span>
+        </a>
+      </div>
+
+      <!-- Scroll cue (reserved space, never overlaps) -->
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+
+    </section>
+
+    <!-- ==================================================================
+         SECTION 2: ABOUT (LIGHT)
+         ================================================================== -->
+    <section class="section" id="about" aria-label="About Arnab Basu">
+      <div class="container">
+        <span class="section-label">01 // Convergence</span>
+
+        <div class="about-grid">
+          <div class="about-narrative">
+            <h2 class="about-headline">Where spirituality meets the workplace, studied with rigor.</h2>
+            <p class="about-paragraph">
+              I am an academician, researcher, and writer investigating the human interior within organizational structures. Currently serving as <strong>Academic Coordinator at Techno India University</strong> (involved with the School of the Future) and pursuing my <strong>PhD in Management at UEM Kolkata</strong>.
+            </p>
+            <p class="about-paragraph">
+              My scholarship focuses on modern spiritual transitions—particularly the "Spiritual But Not Religious" (SBNR) movement—and its measurable impact on employee mental health, resilience, and workplace spirituality. Using rigorous methodologies such as <strong>PRISMA systematic reviews</strong>, my work evaluates spiritual interventions for older adults suffering from dementia, as well as the physiological health and performance outcomes of working women.
+            </p>
+            <p class="about-paragraph">
+              Prior to higher education, I spent years in corporate systems and market operations at <strong>Tata Consultancy Services</strong>, <strong>Torero Corporation</strong>, and <strong>Asian Paints</strong>. That foundation anchors my empirical social science in lived organizational reality.
+            </p>
+
+            <!-- Research Domain Chips -->
+            <div class="about-domains-cloud" id="about-domains-cloud">
+              <!-- Injected dynamically via JS -->
+            </div>
+          </div>
+
+          <!-- Aside: Quick Facts & Impact Numbers -->
+          <div class="about-aside">
+            <div class="quick-facts-box">
+              <div class="fact-row">
+                <span class="fact-label">Location</span>
+                <span class="fact-value">Kolkata, West Bengal, India</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-label">Current Appointments</span>
+                <span class="fact-value">Academic Coordinator, Techno India University</span>
+                <span class="fact-value" style="color:var(--muted); font-size:0.9rem;">PhD Scholar (Management), UEM Kolkata</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-label">Methodologies</span>
+                <span class="fact-value">PRISMA Systematic Reviews, Empirical Surveys, Quantitative Synthesis</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-label">Institutional Unit</span>
+                <span class="fact-value">School of the Future, Techno India University</span>
+              </div>
+            </div>
+
+            <!-- Impact Metrics -->
+            <div class="impact-row-strip" id="impact-strip-container">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 3: PUBLICATIONS — Interactive Carousel
+         ================================================================== -->
+    <section class="section drum-section" id="publications" aria-label="Research and Publications">
+
+      <div class="container">
+        <span class="section-label">02 // Scholarship</span>
+        <h2 class="section-title">Research &amp; Publications</h2>
+        <p class="section-lead">
+          Peer-reviewed journal articles indexed in SCOPUS, SSCI, and ESCI, book chapters with Routledge, conference proceedings, and intellectual property records.
+        </p>
+
+        <!-- Filter Row -->
+        <div class="drum-filter-bar" role="toolbar" aria-label="Filter publications by category">
+          <button type="button" class="drum-filter-btn active" data-filter="all">All (10)</button>
+          <button type="button" class="drum-filter-btn" data-filter="journal">Journals</button>
+          <button type="button" class="drum-filter-btn" data-filter="chapter">Book Chapters</button>
+          <button type="button" class="drum-filter-btn" data-filter="conference">Conference</button>
+          <button type="button" class="drum-filter-btn" data-filter="ip">Monograph &amp; IP</button>
+          <button type="button" class="drum-filter-btn" data-filter="review">Peer Review</button>
+        </div>
+
+        <!-- Carousel Stage -->
+        <div class="drum-stage" id="drum-stage" aria-label="Interactive Publications Drum">
+          <div class="drum-carousel" id="drum-carousel">
+            <!-- Cards injected via JS -->
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="drum-controls">
+          <span class="drum-counter" id="drum-counter">01 / 10</span>
+          <div class="drum-nav-buttons">
+            <button type="button" class="drum-btn" id="drum-prev" aria-label="Previous publication">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="drum-btn" id="drum-next" aria-label="Next publication">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Fallback list (mobile / reduced motion) -->
+        <div class="drum-fallback-list" id="drum-fallback-list" aria-label="Publications list">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Publication Detail Dialog Modal -->
+    <dialog class="pub-modal" id="pub-modal" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">CLOSE [ESC]</button>
+        <span class="modal-indexing" id="modal-indexing">INDEXING</span>
+        <h3 class="modal-title" id="modal-title">Publication Title</h3>
+        <p class="modal-venue" id="modal-venue">Venue Details</p>
+        <p class="modal-authors" id="modal-authors">Authors</p>
+        <div class="modal-actions">
+          <button type="button" class="btn-primary" id="modal-copy-btn">
+            <span>Copy APA Citation</span>
+          </button>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="modal-link">
+            <span>Publisher Link →</span>
+          </a>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- ==================================================================
+         SECTION 4: SKILLS (LIGHT)
+         ================================================================== -->
+    <section class="section" id="skills" aria-label="Skills and Methodologies">
+      <div class="container">
+        <span class="section-label">03 // Capabilities</span>
+        <h2 class="section-title">Methodology &amp; Expertise</h2>
+        <p class="section-lead">
+          Interactive domain competencies ranging from systematic reviews and psychometric rigor to cross-functional leadership and pedagogical AI integration.
+        </p>
+
+        <div class="skills-stream" id="skills-stream-container" style="margin-top: var(--space-7);">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 5: EXPERIENCE & CHRONOLOGY (LIGHT)
+         ================================================================== -->
+    <section class="section" id="experience" aria-label="Career and Education Trajectory">
+      <div class="container">
+        <span class="section-label">04 // Trajectory</span>
+        <h2 class="section-title">Experience &amp; Pedagogy</h2>
+        <p class="section-lead">
+          A career path bridging corporate systems engineering, retail market stewardship, and higher educational administration.
+        </p>
+
+        <!-- Vertical Timeline -->
+        <div class="timeline-track-wrap" id="experience-track-wrap">
+          <div class="timeline-svg-line" aria-hidden="true"></div>
+          <div class="timeline-svg-fill" id="timeline-svg-fill" aria-hidden="true"></div>
+          <div id="experience-nodes-container">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <!-- Education & Certifications -->
+        <div class="edu-cert-grid">
+          <div class="edu-cert-col">
+            <h3 class="section-title" style="font-size: var(--step-2);">Education</h3>
+            <div id="education-monogram-list" style="display:flex; flex-direction:column; gap: var(--space-3);">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <div class="edu-cert-col">
+            <h3 class="section-title" style="font-size: var(--step-2);">Certifications</h3>
+            <div id="certifications-monogram-list" style="display:flex; flex-direction:column; gap: var(--space-3);">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 6: IN THE FIELD
+         ================================================================== -->
+    <section class="section" id="field" aria-label="In The Field Engagements">
+
+      <div class="container">
+        <span class="section-label">05 // Engagement</span>
+        <h2 class="section-title">In The Field</h2>
+        <p class="section-lead">
+          Hackathon adjudications, technological delegations, orientation facilitation, and symposium leadership.
+        </p>
+
+        <div class="field-strip" id="field-strip-container" style="margin-top: var(--space-6);">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 7: CONTACT
+         ================================================================== -->
+    <section class="section contact-section" id="contact" aria-label="Contact Arnab Basu">
+
+      <!-- Faint outline marquee row behind heading -->
+      <div class="contact-marquee" id="contact-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span class="marquee-text">SPIRITUALITY — WELL-BEING — WORKPLACE — CULTURE — </span>
+          <span class="marquee-text">SPIRITUALITY — WELL-BEING — WORKPLACE — CULTURE — </span>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="contact-content">
+          <span class="section-label" style="align-self: center;">06 // Dialogue</span>
+          <h2 class="contact-headline">Let's build something extraordinary.</h2>
+          <p class="section-lead" style="text-align: center;">
+            Available for scholarly collaborations, doctoral discourse, keynote presentations, and advisory partnerships.
+          </p>
+
+          <button type="button" class="btn-primary" id="write-to-me-btn"
+                  style="margin-top: var(--space-3); padding: 1.1rem 2.6rem; font-size: 0.82rem;">
+            <span>Write To Me</span>
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <div class="contact-channels">
+            <button type="button" class="contact-channel-item" id="contact-email-btn">
+              <span>Copy Email</span>
+            </button>
+            <button type="button" class="contact-channel-item" id="contact-phone-btn">
+              <span>Telephone Call</span>
+            </button>
+            <button type="button" class="contact-channel-item" id="contact-linkedin-btn">
+              <span>LinkedIn Profile</span>
+            </button>
+          </div>
+
+          <noscript>
+            <div style="margin-top: 2rem; padding: 1rem; border: 1px solid rgba(14,116,144,0.14);">
+              <p style="color: #0F172A; font-family: monospace;">
+                JavaScript is disabled. Connect via my verified
+                <a href="https://www.linkedin.com/in/arnab-basu-3a06a8124/"
+                   style="color:#0284C7; text-decoration:underline;">LinkedIn profile</a>.
+              </p>
+            </div>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       FOOTER (dark, continuous with contact)
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p class="footer-meta">
+        &copy; <span id="footer-year">2026</span> Arnab Basu
+        &middot; Explorer &middot; Researcher &middot; Writer &middot; Academician
+      </p>
+      <a href="#hero" class="back-to-top" id="back-to-top">Return to Top &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Shelf -->
+  <div class="toast-shelf" id="toast-shelf" aria-live="polite"></div>
+
+  <!-- Classic (non-module) Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

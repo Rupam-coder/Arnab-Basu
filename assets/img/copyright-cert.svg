@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <rect width="396" height="276" x="2" y="2" fill="#F3EEE4" stroke="#D6CCB9" stroke-width="1"/>
+  <rect x="12" y="12" width="376" height="256" fill="none" stroke="#D6CCB9" stroke-width="1"/>
+  <circle cx="200" cy="74" r="28" fill="#EBE4D6" stroke="#6B1F2A" stroke-width="1"/>
+  <path d="M200 56 L205 68 L217 68 L207 76 L211 88 L200 80 L189 88 L193 76 L183 68 L195 68 Z" fill="#6B1F2A" fill-opacity="0.2" stroke="#6B1F2A" stroke-width="1"/>
+  <text x="200" y="130" font-family="Cormorant Garamond, Georgia, serif" font-size="18" fill="#1E1A16" text-anchor="middle" font-weight="600" letter-spacing="1">GOVERNMENT OF INDIA</text>
+  <text x="200" y="150" font-family="Hanken Grotesk, sans-serif" font-size="10" fill="#6B1F2A" text-anchor="middle" letter-spacing="2">COPYRIGHT CERTIFICATE</text>
+  <line x1="80" y1="168" x2="320" y2="168" stroke="#D6CCB9" stroke-width="1"/>
+  <text x="200" y="194" font-family="Newsreader, serif" font-size="15" fill="#1E1A16" text-anchor="middle" font-style="italic">Corporate Mahabharata</text>
+  <text x="200" y="215" font-family="Newsreader, serif" font-size="12" fill="#6A6256" text-anchor="middle">Registered Work · Notion Press</text>
+  <text x="200" y="242" font-family="Hanken Grotesk, sans-serif" font-size="9" fill="#6B1F2A" text-anchor="middle" letter-spacing="1">REGISTRATION CONFIRMED</text>
+</svg>
