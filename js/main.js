@@ -78,14 +78,11 @@
   }
 
   /* ==========================================================================
-     3. LOADER & OPENING ANIMATION ("Arnab Basu" with kinetic load progress)
+     3. LOADER & OPENING ANIMATION (Cyberpunk Decryption Glitch: "Arnab Basu" only)
      ========================================================================== */
   function initLoader() {
     var curtain = document.getElementById('intro-curtain');
     var nameEl = document.getElementById('intro-title');
-    var hairline = document.getElementById('intro-hairline');
-    var badge = curtain ? curtain.querySelector('.intro-badge') : null;
-    var progressBar = document.getElementById('intro-loader-progress');
 
     if (!curtain || !nameEl) return;
 
@@ -114,22 +111,35 @@
       return;
     }
 
-    var rawText = DATA.person.name;
+    var rawText = DATA.person.name || "Arnab Basu";
     nameEl.innerHTML = '';
     var charSpans = [];
 
+    // Cyberpunk decoding characters set
+    var cyberChars = "01#@%&*<>{}[]/?~ΔΞλ⚡ZXQ987";
+
     for (var i = 0; i < rawText.length; i++) {
-      var char = rawText[i];
+      var targetChar = rawText[i];
+      var wrapper = document.createElement('span');
+      wrapper.className = 'intro-char-wrapper';
+
       var span = document.createElement('span');
       span.className = 'intro-char';
-      if (char === ' ') {
+
+      if (targetChar === ' ') {
         span.innerHTML = '&nbsp;';
-        span.style.minWidth = '0.35em';
+        wrapper.style.minWidth = '0.36em';
       } else {
-        span.textContent = char;
+        span.textContent = cyberChars[Math.floor(Math.random() * cyberChars.length)];
       }
-      nameEl.appendChild(span);
-      charSpans.push(span);
+
+      wrapper.appendChild(span);
+      nameEl.appendChild(wrapper);
+      charSpans.push({
+        el: span,
+        target: targetChar,
+        isSpace: targetChar === ' '
+      });
     }
 
     var dismissed = false;
@@ -141,38 +151,50 @@
       setTimeout(function () {
         document.body.classList.remove('scroll-locked');
         curtain.remove();
-      }, speed || 750);
+      }, speed || 800);
     };
 
     curtain.addEventListener('click', function () { dismiss(300); });
     window.addEventListener('keydown', function () { dismiss(300); }, { once: true });
 
-    // Animate badge in first
-    setTimeout(function () {
-      if (badge) badge.classList.add('visible');
-    }, 120);
+    // Cyberpunk cipher decryption reveal loop
+    charSpans.forEach(function (item, idx) {
+      if (item.isSpace) return;
 
-    // Stagger character entrance with spring ease
-    charSpans.forEach(function (span, idx) {
-      setTimeout(function () { span.classList.add('visible'); }, 200 + idx * 70);
+      var startDelay = 120 + idx * 80;
+      var resolveDelay = startDelay + 450 + Math.random() * 250;
+      var intervalTimer = null;
+
+      setTimeout(function () {
+        item.el.classList.add('decoding');
+
+        // Scramble rapid cipher ticks
+        intervalTimer = setInterval(function () {
+          item.el.textContent = cyberChars[Math.floor(Math.random() * cyberChars.length)];
+        }, 45);
+      }, startDelay);
+
+      // Lock in final character with chromatic gradient
+      setTimeout(function () {
+        if (intervalTimer) clearInterval(intervalTimer);
+        item.el.textContent = item.target;
+        item.el.classList.remove('decoding');
+        item.el.classList.add('resolved');
+      }, resolveDelay);
     });
 
-    // Animate glowing hairline
+    // Trigger full chromatic RGB glitch across resolved name
+    var totalRevealTime = 120 + charSpans.length * 80 + 750;
     setTimeout(function () {
-      if (hairline) hairline.classList.add('drawn');
-    }, 950);
-
-    // Animate progress bar fill
-    setTimeout(function () {
-      if (progressBar) progressBar.classList.add('complete');
-    }, 300);
+      nameEl.classList.add('cyber-glitch');
+    }, totalRevealTime);
 
     // Auto-dismiss once fonts are ready and animation finishes
     Promise.all([
       document.fonts ? document.fonts.ready : Promise.resolve(),
-      new Promise(function (res) { setTimeout(res, 2200); })
+      new Promise(function (res) { setTimeout(res, totalRevealTime + 850); })
     ]).then(function () {
-      dismiss(750);
+      dismiss(800);
     });
   }
 

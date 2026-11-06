@@ -213,14 +213,15 @@ button {
 
 /* --------------------------------------------------------------------------
    4. INTRO CURTAIN & WEBSITE LOADER ANIMATION
-   Featuring "Arnab Basu" with Space Grotesk kinetic typography,
-   glowing starlight pulse, and glacier-aquatic progress bar.
+   Cyberpunk glitch & cipher decode reveal of "Arnab Basu" only.
+   Unified Theme Palette: Pure White background, Black text, Glacier Blue, Aquatic Blue.
+   Font: Michroma (futuristic mecha/tech style).
    -------------------------------------------------------------------------- */
 .intro-curtain {
   position: fixed;
   inset: 0;
   z-index: 100000;
-  background: radial-gradient(circle at 50% 45%, #F0F9FF 0%, #E0F2FE 50%, #D8EDFA 100%);
+  background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #F0F9FF 55%, #E0F2FE 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -228,23 +229,29 @@ button {
   cursor: pointer;
   pointer-events: auto;
   overflow: hidden;
-  transition: transform 750ms var(--ease-curtain), opacity 500ms var(--ease-cinematic);
+  transition: transform 750ms cubic-bezier(0.85, 0, 0.15, 1), opacity 500ms var(--ease-cinematic);
 }
 
-.intro-ambient-glow {
+/* Futuristic Mecha atmospheric backdrop: subtle cyber-grid on crisp white */
+.intro-curtain::before {
+  content: "";
   position: absolute;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.28) 0%, rgba(2, 132, 199, 0.12) 40%, transparent 70%);
-  filter: blur(48px);
+  inset: 0;
+  background:
+    linear-gradient(rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  background-position: center center;
   pointer-events: none;
-  animation: introGlowPulse 3s ease-in-out infinite alternate;
+  opacity: 0.7;
 }
 
-@keyframes introGlowPulse {
-  0% { transform: scale(0.85); opacity: 0.6; }
-  100% { transform: scale(1.15); opacity: 1; }
+.intro-curtain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(125, 211, 252, 0.25) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .intro-curtain.dismissed {
@@ -262,138 +269,100 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 0 var(--space-4);
-  max-width: 900px;
-}
-
-.intro-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.35rem 0.95rem;
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(2, 132, 199, 0.22);
-  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.12);
-  margin-bottom: var(--space-4);
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: all 500ms var(--ease-cinematic);
-}
-
-.intro-badge.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.intro-badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--aquatic);
-  box-shadow: 0 0 10px var(--aquatic);
-  animation: introDotPulse 1.4s ease-in-out infinite;
-}
-
-@keyframes introDotPulse {
-  0%, 100% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 14px var(--aquatic); }
-}
-
-.intro-badge-text {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--aquatic-deep);
-  font-weight: 600;
+  max-width: 1100px;
 }
 
 .intro-title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 10vw, 7.5rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
+  font-family: 'Michroma', 'Orbitron', 'Space Grotesk', system-ui, sans-serif;
+  font-size: clamp(2.8rem, 9.5vw, 7.8rem);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
   color: #0F172A;
   display: inline-flex;
   white-space: pre;
   text-transform: uppercase;
-  text-shadow: 0 8px 32px rgba(2, 132, 199, 0.2);
+  position: relative;
+  text-shadow: 0 4px 20px rgba(2, 132, 199, 0.25);
+}
+
+/* Individual letter reveal */
+.intro-char-wrapper {
+  display: inline-block;
+  overflow: visible;
+  vertical-align: top;
+  position: relative;
 }
 
 .intro-char {
   display: inline-block;
   opacity: 0;
-  transform: translateY(28px) scale(0.92);
-  transition: opacity 450ms var(--ease-cinematic), transform 450ms var(--ease-cinematic), color 350ms;
-  background: linear-gradient(135deg, #0F172A 0%, #0369A1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  transform: translateY(20px) scale(0.9);
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1), opacity 240ms ease;
+  will-change: transform, opacity, filter, color;
 }
 
-.intro-char.visible {
+.intro-char.decoding {
   opacity: 1;
   transform: translateY(0) scale(1);
+  font-family: 'JetBrains Mono', 'Michroma', monospace;
+  color: #0284C7;
+  text-shadow:
+    0 0 10px rgba(14, 165, 233, 0.8),
+    2px 0 0 #0369A1,
+    -2px 0 0 #7DD3FC;
 }
 
-.intro-hairline {
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--aquatic), #38BDF8, transparent);
-  margin-top: var(--space-4);
-  box-shadow: 0 0 12px rgba(2, 132, 199, 0.6);
-  transition: width 600ms var(--ease-cinematic);
+.intro-char.resolved {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  font-family: 'Michroma', 'Space Grotesk', sans-serif;
+  background: linear-gradient(135deg, #0F172A 0%, #0369A1 50%, #0284C7 80%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(2, 132, 199, 0.35)) drop-shadow(0 0 16px rgba(125, 211, 252, 0.45));
 }
 
-.intro-hairline.drawn {
-  width: 75%;
+/* Mecha Cyber Glitch animation using Black, Glacier Blue, Aquatic Blue */
+.intro-title.cyber-glitch {
+  animation: mechaCyberGlitch 1.5s ease infinite alternate;
 }
 
-.intro-loader-bar {
-  width: 200px;
-  height: 3px;
-  background: rgba(14, 116, 144, 0.15);
-  border-radius: 999px;
-  margin-top: var(--space-5);
-  overflow: hidden;
-  position: relative;
-}
-
-.intro-loader-progress {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #0284C7, #38BDF8);
-  border-radius: 999px;
-  box-shadow: 0 0 10px #38BDF8;
-  transition: width 1500ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.intro-loader-progress.complete {
-  width: 100%;
-}
-
-.intro-skip-cue {
-  position: absolute;
-  bottom: var(--space-6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--aquatic-deep);
-  font-weight: 500;
-  opacity: 0.85;
-}
-
-.intro-skip-sub {
-  font-size: 0.6rem;
-  opacity: 0.6;
-  letter-spacing: 0.14em;
+@keyframes mechaCyberGlitch {
+  0% {
+    text-shadow:
+      -2px -1px 0 rgba(3, 105, 161, 0.9),
+       2px  1px 0 rgba(14, 165, 233, 0.9),
+       0 0 16px rgba(125, 211, 252, 0.6);
+  }
+  20% {
+    text-shadow:
+       2px  0 0 rgba(15, 23, 42, 0.8),
+      -2px  0 0 rgba(2, 132, 199, 0.9),
+       0 0 22px rgba(14, 165, 233, 0.7);
+  }
+  40% {
+    text-shadow:
+      -1px  2px 0 rgba(125, 211, 252, 0.95),
+       1px -2px 0 rgba(3, 105, 161, 0.9),
+       0 0 26px rgba(2, 132, 199, 0.8);
+  }
+  70% {
+    text-shadow:
+      -2px -1px 0 rgba(2, 132, 199, 0.9),
+       2px  1px 0 rgba(125, 211, 252, 0.9),
+       0 0 18px rgba(3, 105, 161, 0.6);
+  }
+  100% {
+    text-shadow:
+      -1px  0 0 rgba(15, 23, 42, 0.9),
+       1px  0 0 rgba(14, 165, 233, 0.9),
+       0 0 28px rgba(125, 211, 252, 0.85);
+  }
 }
 
 /* --------------------------------------------------------------------------
